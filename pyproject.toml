@@ -1,0 +1,50 @@
+[build-system]
+requires = [
+    "scikit-build-core>=0.10.0",
+    "numpy",
+    "setuptools",
+    "meson",
+    "ninja"
+]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "pyprosail"
+version = "1.1.2"
+authors = [
+    { name = "Robin Wilson", email = "robin@rtwilson.com" },
+    { name = "Lukas Valentin Graf" }
+]
+description = "PyProSAIL is a Python interface to the ProSAIL combined leaf and canopy optical model."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "COPYING" }
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "numpy",
+]
+
+[project.urls]
+Repository = "https://github.com/EOA-team/PyProSAIL"
+Documentation = "https://pyprosail.readthedocs.io/en/latest/"
+
+[tool.scikit-build]
+wheel.packages = ["pyprosail"]
+build-dir = "build/{wheel_tag}"
+install.components = ["Runtime", "Development"]
+cmake.build-type = "Release"
+cmake.minimum-version = "3.15"
+cmake.verbose = true
