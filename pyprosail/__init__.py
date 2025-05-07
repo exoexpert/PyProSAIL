@@ -23,7 +23,7 @@ The main function is `run`, which runs the ProSAIL model and returns the results
 from __future__ import annotations
 
 import numpy as np
-from _prosail_model import run as run_fortran
+from ._prosail_model import run as run_fortran
 
 # Common leaf distributions
 Planophile = (1, 0)
